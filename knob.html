@@ -9,21 +9,6 @@
           alert( " MIT entered ");
       }
       
-      var gotPermission = function(result) {
-    requestButton.style.display = 'none';
-    knob.style.display = 'block';
-    console.log('App was granted the "usbDevices" permission.');
-    usb.findDevices( DEVICE_INFO, 
-      function(devices) {
-        if (!devices || !devices.length) {
-          console.log('device not found');
-          return;
-        }
-        console.log('Found device: ' + devices[0].handle);
-        powerMateDevice = devices[0];
-        usb.interruptTransfer(powerMateDevice, transfer, onEvent);
-    });
-  };  
       function fdevice()
       {
         var POWERMATE_VENDOR_ID = 1917;//0x077d;
