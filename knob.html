@@ -9,10 +9,10 @@
           alert( " MIT entered ");
       }
       
-      //function condition()
-      //{
-        
-      //}
+      function condition()
+      {
+          alert(" condition checked");  
+      }
       
       function fdevice()
       {
@@ -21,20 +21,21 @@
         var DEVICE_INFO = {"vendorId": POWERMATE_VENDOR_ID, "productId": POWERMATE_PRODUCT_ID};
         var usb = chrome.usb;
         var permobj = {permissions:[{'usbDevices':[DEVICE_INFO]}]};
-        chrome.permission.request(permobj,function(result))
-        if(result)
-        {
-          alert("Pemission granted");
-        }
+        chrome.permission.request(permobj,condition())
+        
+        //if(result)
+        //{
+          //alert("Pemission granted");
+        //}
         alert("find device triggered")
-        usb.findDevices( DEVICE_INFO,mit())
-        {
+        //usb.findDevices( DEVICE_INFO,mit())
+        //{
             alert(" Entered ");
-            if (!devices || !devices.length) 
-            {
-                console.log('device not found');
-            }
-        }
+            //if (!devices || !devices.length) 
+            //{
+              //  console.log('device not found');
+            //}
+        //}
 
       }
     </script>
