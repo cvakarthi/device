@@ -11,7 +11,7 @@
       
       function condition()
       {
-          alert(" condition checked");  
+          return 1; 
       }
       
       function fdevice()
@@ -23,19 +23,19 @@
         var permobj = {permissions:[{'usbDevices':[DEVICE_INFO]}]};
         chrome.permission.request(permobj,condition())
         
-        //if(result)
-        //{
-          //alert("Pemission granted");
-        //}
+        if(result)
+        {
+          alert("Pemission granted");
+        }
         alert("find device triggered")
-        //usb.findDevices( DEVICE_INFO,mit())
-        //{
+        usb.findDevices( DEVICE_INFO,mit())
+        {
             alert(" Entered ");
             //if (!devices || !devices.length) 
             //{
               //  console.log('device not found');
             //}
-        //}
+        }
 
       }
     </script>
