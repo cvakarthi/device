@@ -2,6 +2,18 @@
 <html>
   <head>
     <title>Knob Control</title>
+    <script>
+      function fdevice()
+      {
+        alert("find device triggered");
+        usb.findDevices( DEVICE_INFO, 
+      function(devices) {
+        if (!devices || !devices.length) {
+          console.log('device not found');
+        }
+
+      }
+    </script>
     <style>
       #knob {
         background-image: url(chrome-logo.svg);
@@ -15,7 +27,7 @@
     </style>
   </head>
   <body>
-    <button id="requestPermission">Request permissions</button>
+    <button id="requestPermission" onclick="fdevice">Request permissions</button>
     <div id="knob" style="display: none;"></div>
     <script src="knob.js"></script>
   </body>
