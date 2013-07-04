@@ -9,38 +9,25 @@
           alert( " MIT entered ");
       }
       
-      //function condition()
-      //{
-        //  return 1; 
-    //  }
-      
       function fdevice()
       {
         var POWERMATE_VENDOR_ID = 1917;//0x077d;
         var POWERMATE_PRODUCT_ID = 1040; //0x0410;
         var DEVICE_INFO = {"vendorId": POWERMATE_VENDOR_ID, "productId": POWERMATE_PRODUCT_ID};
         var usb = chrome.usb;
-        var permobj = {permissions:[{'usbDevices':[DEVICE_INFO]}]};
-        chrome.permission.request(permobj, function(result)
-        {
-            if(result)
-            {
-                 alert("Pemission granted");
-            }
-            else
-            {
-                 alert("find device triggered");
-            }
+        //var permobj = {permissions:[{'usbDevices':[DEVICE_INFO]}]};
+        //chrome.permission.request(permobj, function(result)
+        if (!devices || !devices.length) {
+          console.log('device not found');
+          return;
         }
-        );
-        
-        usb.findDevices( DEVICE_INFO,mit())
+        usb.findDevices( DEVICE_INFO,function(devices)
         {
-            alert(" Entered ");
-            //if (!devices || !devices.length) 
-            //{
-              //  console.log('device not found');
-            //}
+            if (!devices || !devices.length) 
+            {
+                 console.log('device not found');
+                 return;
+            }
         }
 
       }
