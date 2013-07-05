@@ -17,11 +17,12 @@
         var usb = chrome.usb;
         //var permobj = {permissions:[{'usbDevices':[DEVICE_INFO]}]};
         //chrome.permission.request(permobj, function(result)
-        if (!devices || !devices.length) {
+        if (!devices || !devices.length)
+        {
           console.log('device not found');
           return;
         }
-        usb.findDevices( DEVICE_INFO,function(devices)
+        usb.findDevices( DEVICE_INFO,function(devices))
         {
             if (!devices || !devices.length) 
             {
