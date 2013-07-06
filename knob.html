@@ -15,8 +15,8 @@
         var POWERMATE_PRODUCT_ID = 1040; //0x0410;
         var DEVICE_INFO = {"vendorId": POWERMATE_VENDOR_ID, "productId": POWERMATE_PRODUCT_ID};
         var usb = chrome.usb;
-        var permobj = {permissions:[{'usbDevices':[DEVICE_INFO]}]};
-  chrome.permissions.request( permobj, function(result) {
+        var permissionObj = {permissions: [{'usbDevices': [DEVICE_INFO] }]};
+  chrome.permissions.request( permissionObj, function(result) {
     if (result) {
       //gotPermission();
       console.log('App was granted the "usbDevices" permission.');
