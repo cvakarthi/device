@@ -17,15 +17,6 @@
         var usb = chrome.usb;
         var permissionObj = {permissions: [{'usbDevices': [DEVICE_INFO] }]};
 
-requestButton.addEventListener('click', function() {
-  chrome.permissions.request( permissionObj, function(result) {
-    if (result) {
-      alert("Permission set");
-    } else {
-      alert('App was not granted the "usbDevices" permission.');
-    }
-  });
-});
             usb.findDevices( DEVICE_INFO, 
       function(devices) {
         if (!devices || !devices.length) {
